@@ -42,4 +42,12 @@ public class BlogRepository {
 		sqlSession.update("blog.basicUpdate", map);
 		
 	}
+
+	public void basicTitleUpdate(String id, BlogVo vo) {
+		Map<String, Object> map=new HashMap<>();
+		map.put("id", id);
+		map.put("title",vo.getTitle());
+		sqlSession.update("blog.basicTitleUpdate", map);
+		
+	}
 }

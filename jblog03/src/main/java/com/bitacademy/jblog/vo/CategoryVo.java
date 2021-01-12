@@ -3,7 +3,8 @@ package com.bitacademy.jblog.vo;
 public class CategoryVo {
 	private Long no;
 	private String name;
-	private String desc;
+	private String description;
+	private Long count;
 	private String regDate;
 	private String id;
 	public Long getNo() {
@@ -18,11 +19,19 @@ public class CategoryVo {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getDesc() {
-		return desc;
+	
+	public String getDescription() {
+		return description;
 	}
-	public void setDesc(String desc) {
-		this.desc = desc;
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
+	public Long getCount() {
+		return count;
+	}
+	public void setCount(Long count) {
+		this.count = count;
 	}
 	public String getRegDate() {
 		return regDate;
@@ -38,8 +47,10 @@ public class CategoryVo {
 	}
 	@Override
 	public String toString() {
-		return "Category [no=" + no + ", name=" + name + ", desc=" + desc + ", regDate=" + regDate + ", id=" + id + "]";
+		return "CategoryVo [no=" + no + ", name=" + name + ", description=" + description + ", count=" + count
+				+ ", regDate=" + regDate + ", id=" + id + "]";
 	}
+	
 	
 	
 }

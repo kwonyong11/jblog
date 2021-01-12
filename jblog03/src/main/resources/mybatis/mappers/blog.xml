@@ -9,14 +9,14 @@
 				<![CDATA[
 					select id, title 
 					from blog 
-					where title=#{k }
+					where title like concat('%',#{k },'%')
 				]]>
 			</when>
 			<otherwise>
 				<![CDATA[
 					select id, title 
 					from blog 
-					where id=#{k }
+					where id like concat('%',#{k },'%')
 				]]>
 			</otherwise>
 		</choose>
@@ -39,6 +39,12 @@
 	<update id="basicUpdate" parameterType="map">
 		<![CDATA[
 			update blog set title=#{title }, logo=#{logo } where id=#{id }
+		]]>
+	</update>
+	
+	<update id="basicTitleUpdate" parameterType="map">
+		<![CDATA[
+			update blog set title=#{title } where id=#{id }
 		]]>
 	</update>
 </mapper>

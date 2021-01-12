@@ -1,5 +1,7 @@
 package com.bitacademy.jblog.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,8 +18,14 @@ public class CategoryService {
 		categoryRepository.categoryInsert(id,categoryVo);
 	}
 
-	public void findList(String id) {
-		categoryRepository.findList(id);
+	public List<CategoryVo> findCategoryList(String id) {
+
+		return categoryRepository.findCategoryList(id);
+		
+	}
+
+	public void categoryDelete(Long no) {
+		categoryRepository.categoryDelete(no);
 		
 	}
 }

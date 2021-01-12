@@ -1,6 +1,5 @@
 package com.bitacademy.jblog.service;
 
-import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -12,13 +11,12 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.bitacademy.jblog.repository.BlogRepository;
 import com.bitacademy.jblog.vo.BlogVo;
-import com.bitacademy.jblog.vo.CategoryVo;
 import com.bitacademy.jblog.vo.UserVo;
 
 @Service
 public class BlogService {
 	
-	private static final String SAVE_PATH = "/Java-fullstack/eclipse_workspace/jblog/jblog03/src/main/webapp/assets/images";
+	private static final String SAVE_PATH = "/java-fullstack/jblog";
 	
 	@Autowired
 	private BlogRepository blogRepository;
@@ -54,10 +52,16 @@ public class BlogService {
 			OutputStream os = new FileOutputStream(SAVE_PATH + "/" + saveFilename);
 			os.write(fileData);
 			os.close();
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return saveFilename;
+	}
+
+	public void basicTitleUpdate(String id, BlogVo vo) {
+		blogRepository.basicTitleUpdate(id,vo);
+		
 	}
 }

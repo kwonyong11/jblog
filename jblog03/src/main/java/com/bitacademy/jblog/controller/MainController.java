@@ -2,7 +2,6 @@ package com.bitacademy.jblog.controller;
 
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,6 +26,7 @@ public class MainController {
 		if(vo!=null) {
 			model.addAttribute("id", vo.getId());
 		}
+		
 		return "main/index";
 	}
 	
