@@ -39,7 +39,7 @@
 		</div>
 		<div id="extra">
 			<div class="blog-logo">
-				<img src="${pageContext.request.contextPath}/assets/${basic.logo }">
+				<img src="${pageContext.request.contextPath}/jimages/${basic.logo }" style="height:200px;">
 			</div>
 		</div>
 

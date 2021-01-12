@@ -13,6 +13,7 @@ import com.bitacademy.jblog.service.BlogService;
 import com.bitacademy.jblog.service.CategoryService;
 import com.bitacademy.jblog.vo.BlogVo;
 import com.bitacademy.jblog.vo.CategoryVo;
+import com.bitacademy.security.Auth;
 
 @Controller
 @RequestMapping("/{id:(?!assets).*}/category")
@@ -22,6 +23,8 @@ public class CategoryController {
 	private CategoryService categoryService;
 	@Autowired
 	private BlogService blogService;
+	
+	@Auth(value=true)
 	@RequestMapping(value="", method=RequestMethod.GET)
 	public String category(@PathVariable String id, Model model) {
 		
@@ -29,12 +32,14 @@ public class CategoryController {
 		
 		model.addAttribute("id", id);
 		List<CategoryVo> list = categoryService.findCategoryList(id);
+		System.out.println(list);
 		model.addAttribute("list", list);
 		model.addAttribute("totalCount", list.size());
 		model.addAttribute("basic",vo );
 		return "blog/blog-admin-category";
 	}
 	
+	@Auth(value=true)
 	@RequestMapping(value="", method=RequestMethod.POST)
 	public String category(@PathVariable String id,CategoryVo categoryVo) {
 		
@@ -43,6 +48,7 @@ public class CategoryController {
 		return "redirect:/"+id+"/category";
 	}
 	
+	@Auth(value=true)
 	@RequestMapping(value="/delete/{no}", method=RequestMethod.GET)
 	public String delete(@PathVariable String id,@PathVariable Long no) {
 		

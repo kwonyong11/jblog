@@ -8,8 +8,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>JBlog</title>
-<Link rel="stylesheet"
-	href="${pageContext.request.contextPath}/assets/css/jblog.css">
+<Link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/jblog.css">
 </head>
 <body>
 	<div class="center-content">
@@ -22,21 +21,26 @@
 					value="검색" />
 			</fieldset>
 			<fieldset>
-				<input type="radio" name="which" value="blog-title"> <label>블로그 제목</label>
+				<input type="radio" name="which" value="blog-title" checked="checked"> <label>블로그 제목</label>
 				<input type="radio" name="which" value="tag"> <label>태그</label>
 				<input type="radio" name="which" value="blog-user"> <label>블로거</label>
 			</fieldset>
 		</form>
-	</div>
-	<div class="center-content">
-		<c:if test='${keyword!="" }'>
+		
+		<table style="width:100%; border-top: 1px solid #444444; border-collapse: collapse;">
+			<tr>
+				<th style="border-bottom: 1px solid #444444; padding: 10px;">블로그 제목</th>
+				<th style="border-bottom: 1px solid #444444; padding: 10px;">블로거</th>
+			</tr>
+			<c:if test='${keyword!="" }'>
 			<c:forEach items="${list }" var="list">
-				<ul class="menu">
-					<li><a href="${pageContext.request.contextPath }/${list.id }">${list.title }</a></li>
-					<li><a href="${pageContext.request.contextPath }/${list.id }">${list.id }</a></li>
-				</ul>
+			<tr>
+				<td style="border-bottom: 1px solid #444444; padding: 10px;"><a href="${pageContext.request.contextPath }/${list.id }">${list.title }</a></td>
+				<td style="border-bottom: 1px solid #444444; padding: 10px;"><a href="${pageContext.request.contextPath }/${list.id }">${list.id }</a></td>
+			</tr>
 			</c:forEach>
-		</c:if>
+			</c:if>
+		</table>
 	</div>
 </body>
 </html>

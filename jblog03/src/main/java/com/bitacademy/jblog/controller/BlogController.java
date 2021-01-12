@@ -23,7 +23,7 @@ import com.bitacademy.security.Auth;
 import com.bitacademy.security.AuthUser;
 
 @Controller
-@RequestMapping("/{id:(?!assets).*}")
+@RequestMapping("/{id:(?!assets|jimages).*}")
 public class BlogController {
 	
 	@Autowired
@@ -85,7 +85,7 @@ public class BlogController {
 		return "blog/blog-main";
 	}
 
-	@Auth
+	@Auth(value=true)
 	@RequestMapping(value="/basic", method=RequestMethod.GET)
 	public String basic(
 		@PathVariable String id,
@@ -97,7 +97,7 @@ public class BlogController {
 		return "blog/blog-admin-basic";
 	}
 	
-	@Auth
+	@Auth(value=true)
 	@RequestMapping(value="/basic", method=RequestMethod.POST)
 	public String basic(
 		@PathVariable String id,

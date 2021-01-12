@@ -35,7 +35,7 @@
 						<td>${list.description }</td>
 						<td>
 						<a href="${pageContext.request.contextPath}/${id }/category/delete/${list.no }">
-						<img src="${pageContext.request.contextPath}/assets/images/delete.jpg">
+						<img src="${pageContext.request.contextPath }/assets/images/delete.jpg">
 						</a>
 						</td>
 					</tr>  

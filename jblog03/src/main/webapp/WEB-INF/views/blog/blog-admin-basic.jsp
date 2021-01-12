@@ -27,7 +27,7 @@
 			      		</tr>
 			      		<tr>
 			      			<td class="t">로고이미지</td>
-			      			<td><img src="${pageContext.request.contextPath }/assets/${basic.logo }"></td>      			
+			      			<td><img src="${pageContext.request.contextPath }/jimages/${basic.logo }" style="height:200px;"></td>      			
 			      		</tr>      		
 			      		<tr>
 			      			<td class="t">&nbsp;</td>

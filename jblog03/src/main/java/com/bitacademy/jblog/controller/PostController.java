@@ -15,6 +15,7 @@ import com.bitacademy.jblog.service.PostService;
 import com.bitacademy.jblog.vo.BlogVo;
 import com.bitacademy.jblog.vo.CategoryVo;
 import com.bitacademy.jblog.vo.PostVo;
+import com.bitacademy.security.Auth;
 
 
 @Controller
@@ -30,6 +31,7 @@ public class PostController {
 	@Autowired
 	private CategoryService categoryService;
 	
+	@Auth(value=true)
 	@RequestMapping(value="", method=RequestMethod.GET)
 	public String write(@PathVariable String id, Model model) {
 		
@@ -42,6 +44,7 @@ public class PostController {
 		return "blog/blog-admin-write";
 	}
 	
+	@Auth(value=true)
 	@RequestMapping(value="", method=RequestMethod.POST)
 	public String write(@PathVariable String id, Model model, PostVo postVo) {
 		postService.postInsert(postVo);

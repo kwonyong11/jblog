@@ -16,7 +16,7 @@
 			from category left join post 
 			on category.no = post.category_no 
 			where category.id=#{id } 
-			group by post.category_no 
+			group by category.no 
 			order by category.no
 		]]>
 	</select>
