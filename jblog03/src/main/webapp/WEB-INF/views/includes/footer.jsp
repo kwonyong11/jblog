@@ -5,6 +5,6 @@
 	pageEncoding="UTF-8"%>
 <div id="footer">
 	<p>
-		<strong>${basic.title }</strong> is powered by JBlog (c)2016
+		<strong>${basic.title }</strong> is powered by JBlog (c)2021
 	</p>
 </div>
