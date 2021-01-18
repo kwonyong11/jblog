@@ -104,13 +104,13 @@ public class BlogController {
 		BlogVo vo,
 		@RequestParam(value="logoFile") MultipartFile logoFile) {
 		System.out.println("----"+logoFile);
-//		if(logoFile.isEmpty()) {
-//			blogService.basicTitleUpdate(id,vo);
-//		}
-//		else {
-//			vo.setLogo(blogService.FileUpload(logoFile,id));
-//			blogService.basicUpdate(id,vo);
-//		}
+		if(logoFile.isEmpty()) {
+			blogService.basicTitleUpdate(id,vo);
+		}
+		else {
+			vo.setLogo(blogService.FileUpload(logoFile,id));
+			blogService.basicUpdate(id,vo);
+		}
 		return "redirect:/"+id+"/basic";
 	}
 	
