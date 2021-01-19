@@ -49,9 +49,9 @@ spring:
    # datasource
    datasource:
       driver-class-name: org.mariadb.jdbc.Driver
-      url: jdbc:mysql://192.168.1.126:3307/webdb?characterEncoding=utf8
-      username: webdb
-      password: webdb
+      url: jdbc:mysql://192.168.1.126:3307/jblog?characterEncoding=utf8
+      username: jblog
+      password: jblog
       initialSize: 10
       maxActive: 100
 
@@ -71,9 +71,9 @@ spring:
 
 # server
 server:
-   port: 8088
+   port: 8888
    servlet:
-      context-path: /mysite06
+      context-path: /jblog06
 
 # mybatis
 mybatis:
