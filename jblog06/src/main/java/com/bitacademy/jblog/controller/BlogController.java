@@ -46,7 +46,7 @@ public class BlogController {
 		
 		Long categoryNo = null;
 		List<CategoryVo> categoryList=category(id);
-		if(category.isEmpty()) {
+		if(category.isPresent()) {
 			if(categoryList.isEmpty()) {
 				checkCategory=0;
 			}
@@ -60,7 +60,7 @@ public class BlogController {
 		
 		Long postNo = null;
 		List<PostVo> postList = post(categoryNo,id); 
-		if(post.isEmpty()) {
+		if(post.isPresent()) {
 			if(postList.isEmpty()) {
 				checkPost = 0;
 			}
